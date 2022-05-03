@@ -15,23 +15,23 @@
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="contatos">Contatos</a>
         </li>
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown" dropdown>
-            <a dropdownToggle class="nav-link dropdown-toggle" style="cursor: pointer" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Vinícius
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle class="nav-link dropdown-toggle" style="cursor: pointer" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Vinícius
+          </a>
+          <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="perfil">
+              Perfil
             </a>
-            <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" routerLink="perfil">
-                Perfil
-              </a>
-              <div role="separator" class="divider"></div>
-              <a class="dropdown-item" routerLink="#">
-                Sair
-              </a>
-            </div>
-          </li>
-        </ul>
+            <div role="separator" class="divider"></div>
+            <a class="dropdown-item" routerLink="#">
+              Sair
+            </a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
