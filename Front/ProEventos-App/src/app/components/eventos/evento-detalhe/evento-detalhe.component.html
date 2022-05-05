@@ -1,34 +1,52 @@
 <div class="card rounded shadow-sm p-3">
-    <form>
+    <form [formGroup]="form">
         <div class="">
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label>Tema</label>
-                    <input type="text" class="form-control" placeholder="Insira o Tema">
+                    <input type="text" class="form-control" formControlName="tema" placeholder="Insira o Tema"
+                    [ngClass]="{'is-invalid': f['tema'].errors && f['tema'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label>Local</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" formControlName="local" placeholder=""
+                    [ngClass]="{'is-invalid': f['local'].errors && f['local'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Data e Hora</label>
-                    <input type="datetime" class="form-control" placeholder="">
+                    <input type="datetime" class="form-control" formControlName="dataEvento" placeholder=""
+                    [ngClass]="{'is-invalid': f['dataEvento'].errors && f['dataEvento'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label>Qtd Pessoas</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" formControlName="qtdPessoas" placeholder=""
+                    [ngClass]="{'is-invalid': f['qtdPessoas'].errors && f['qtdPessoas'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Telefone</label>
+                    <input type="text" class="form-control" formControlName="telefone" placeholder="(000) 90000-0000"
+                    [ngClass]="{'is-invalid': f['telefone'].errors && f['telefone'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
                 <div class="form-group col-md-4">
-                    <label>Telefone</label>
-                    <input type="text" class="form-control" placeholder="(000) 90000-0000">
-                </div>
-                <div class="form-group col-md-6">
                     <label>Email</label>
-                    <input type="text" class="form-control" placeholder="e-mail">
+                    <input type="text" class="form-control" formControlName="email" placeholder="e-mail"
+                    [ngClass]="{'is-invalid': f['email'].errors && f['email'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Imagem</label>
+                    <input type="text" class="form-control" formControlName="imagemURL" placeholder="imagem"
+                    [ngClass]="{'is-invalid': f['imagemURL'].errors && f['imagemURL'].touched}">
+                    <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
             </div>
         </div>
