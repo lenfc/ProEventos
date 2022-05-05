@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-evento-detalhe',
@@ -8,9 +8,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class EventoDetalheComponent implements OnInit {
 
-  form: FormGroup;
+  form!: FormGroup;
 
-  get f() {
+  get f(){
     return this.form.controls;
   }
   constructor(private fb: FormBuilder) { }
@@ -31,4 +31,7 @@ export class EventoDetalheComponent implements OnInit {
     });
   }
 
+  resetForm() {
+    this.form.reset();
+  }
 }
