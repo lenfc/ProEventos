@@ -94,7 +94,7 @@ namespace ProEventos.API.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             try {
-                if(await _eventoService.DeleteEvento(id)) return Ok("Deletado.");
+                if(await _eventoService.DeleteEvento(id)) return Ok(new {message = "Deletado"});
                 else return BadRequest("Evento não deeltado.");
             }
             catch(Exception ex) {
