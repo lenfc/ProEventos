@@ -10,6 +10,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
@@ -21,8 +23,9 @@ import { PalestrantesComponent } from './components/palestrantes/palestrantes.co
 import { NavComponent } from './shared/nav/nav.component';
 
 import { EventoService } from './services/evento.service';
+import { LoteService } from './services/lote.service';
+
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import { TituloComponent } from './shared/titulo/titulo.component';
 import { ContatosComponent } from './components/contatos/contatos.component';
 import { PerfilComponent } from './components/user/perfil/perfil.component';
@@ -69,10 +72,14 @@ defineLocale('pt-br', ptBrLocale);
       preventDuplicates: true,
       progressBar: true
     }),
-    NgxSpinnerModule,
     BsDatepickerModule.forRoot(),
+    NgxSpinnerModule,
+    NgxCurrencyModule,
   ],
-  providers: [EventoService],
+  providers: [
+    EventoService,
+    LoteService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

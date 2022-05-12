@@ -36,4 +36,5 @@ export class EventoService {
     return this.http.delete(`${this.baseURL}/${id}`)
     .pipe(take(1));
   }
+
 }
